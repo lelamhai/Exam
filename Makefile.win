@@ -1,0 +1,76 @@
+# Project: Project1
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o mycolor.o mydraw.o mykeyboard.o mywindows.o footer.o header.o sidebar.o Layout.o loading.o Login.o about.o classroom.o content.o student.o page.o configApp.o
+LINKOBJ  = main.o mycolor.o mydraw.o mykeyboard.o mywindows.o footer.o header.o sidebar.o Layout.o loading.o Login.o about.o classroom.o content.o student.o page.o configApp.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = Exam.exe
+CXXFLAGS = $(CXXINCS) -std=c++11
+CFLAGS   = $(INCS) -std=c++11
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+mycolor.o: mycolor.cpp
+	$(CPP) -c mycolor.cpp -o mycolor.o $(CXXFLAGS)
+
+mydraw.o: mydraw.cpp
+	$(CPP) -c mydraw.cpp -o mydraw.o $(CXXFLAGS)
+
+mykeyboard.o: mykeyboard.cpp
+	$(CPP) -c mykeyboard.cpp -o mykeyboard.o $(CXXFLAGS)
+
+mywindows.o: mywindows.cpp
+	$(CPP) -c mywindows.cpp -o mywindows.o $(CXXFLAGS)
+
+footer.o: footer.cpp
+	$(CPP) -c footer.cpp -o footer.o $(CXXFLAGS)
+
+header.o: header.cpp
+	$(CPP) -c header.cpp -o header.o $(CXXFLAGS)
+
+sidebar.o: sidebar.cpp
+	$(CPP) -c sidebar.cpp -o sidebar.o $(CXXFLAGS)
+
+Layout.o: Layout.cpp
+	$(CPP) -c Layout.cpp -o Layout.o $(CXXFLAGS)
+
+loading.o: loading.cpp
+	$(CPP) -c loading.cpp -o loading.o $(CXXFLAGS)
+
+Login.o: Login.cpp
+	$(CPP) -c Login.cpp -o Login.o $(CXXFLAGS)
+
+about.o: about.cpp
+	$(CPP) -c about.cpp -o about.o $(CXXFLAGS)
+
+classroom.o: classroom.cpp
+	$(CPP) -c classroom.cpp -o classroom.o $(CXXFLAGS)
+
+content.o: content.cpp
+	$(CPP) -c content.cpp -o content.o $(CXXFLAGS)
+
+student.o: student.cpp
+	$(CPP) -c student.cpp -o student.o $(CXXFLAGS)
+
+page.o: page.cpp
+	$(CPP) -c page.cpp -o page.o $(CXXFLAGS)
+
+configApp.o: configApp.cpp
+	$(CPP) -c configApp.cpp -o configApp.o $(CXXFLAGS)
